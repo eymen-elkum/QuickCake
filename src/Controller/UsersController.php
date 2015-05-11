@@ -55,6 +55,7 @@ class UsersController extends AppController
             $user = $this->Users->patchEntity($user, $this->request->data);
             if ($this->Users->save($user)) {
                 $this->Flash->success('The user has been saved.');
+
                 return $this->redirect(['action' => 'index']);
             } else {
                 $this->Flash->error('The user could not be saved. Please, try again.');
@@ -80,6 +81,7 @@ class UsersController extends AppController
             $user = $this->Users->patchEntity($user, $this->request->data);
             if ($this->Users->save($user)) {
                 $this->Flash->success('The user has been saved.');
+
                 return $this->redirect(['action' => 'index']);
             } else {
                 $this->Flash->error('The user could not be saved. Please, try again.');
@@ -105,6 +107,7 @@ class UsersController extends AppController
         } else {
             $this->Flash->error('The user could not be deleted. Please, try again.');
         }
+
         return $this->redirect(['action' => 'index']);
     }
 }

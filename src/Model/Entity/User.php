@@ -15,16 +15,16 @@ class User extends Entity
      * @var array
      */
     protected $_accessible = [
-        'username' => true,
-        'email' => true,
-        'email_token' => true,
-        'email_verified' => true,
-        'email_token_expires' => true,
-        'active' => true,
-        'password' => true,
-        'password_token' => true,
+        'username'               => true,
+        'email'                  => true,
+        'email_token'            => true,
+        'email_verified'         => true,
+        'email_token_expires'    => true,
+        'active'                 => true,
+        'password'               => true,
+        'password_token'         => true,
         'password_token_expires' => true,
-        'role' => true,
-        'last_login' => true,
+        'role'                   => true,
+        'last_login'             => true,
     ];
 }

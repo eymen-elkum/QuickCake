@@ -22,6 +22,7 @@ class AppView extends View
 {
 
     public $layout = 'BootstrapUI.default';
+
     /**
      * Initialization hook method.
      *

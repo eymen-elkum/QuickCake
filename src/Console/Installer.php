@@ -42,7 +42,7 @@ class Installer
 
         // ask if the permissions should be changed
         if ($io->isInteractive()) {
-            $validator = function ($arg) {
+            $validator            = function ($arg) {
                 if (in_array($arg, ['Y', 'y', 'N', 'n'])) {
                     return $arg;
                 }
@@ -72,13 +72,13 @@ class Installer
     /**
      * Create the config/app.php file if it does not exist.
      *
-     * @param string $dir The application's root directory.
+     * @param string $dir                  The application's root directory.
      * @param \Composer\IO\IOInterface $io IO interface to write to console.
      * @return void
      */
     public static function createAppConfig($dir, $io)
     {
-        $appConfig = $dir . '/config/app.php';
+        $appConfig     = $dir . '/config/app.php';
         $defaultConfig = $dir . '/config/app.default.php';
         if (!file_exists($appConfig)) {
             copy($defaultConfig, $appConfig);
@@ -89,7 +89,7 @@ class Installer
     /**
      * Create the `logs` and `tmp` directories.
      *
-     * @param string $dir The application's root directory.
+     * @param string $dir                  The application's root directory.
      * @param \Composer\IO\IOInterface $io IO interface to write to console.
      * @return void
      */
@@ -120,7 +120,7 @@ class Installer
      *
      * This is not the most secure default, but it gets people up and running quickly.
      *
-     * @param string $dir The application's root directory.
+     * @param string $dir                  The application's root directory.
      * @param \Composer\IO\IOInterface $io IO interface to write to console.
      * @return void
      */
@@ -165,26 +165,28 @@ class Installer
     /**
      * Set the security.salt value in the application's config file.
      *
-     * @param string $dir The application's root directory.
+     * @param string $dir                  The application's root directory.
      * @param \Composer\IO\IOInterface $io IO interface to write to console.
      * @return void
      */
     public static function setSecuritySalt($dir, $io)
     {
-        $config = $dir . '/config/app.php';
+        $config  = $dir . '/config/app.php';
         $content = file_get_contents($config);
 
-        $newKey = hash('sha256', $dir . php_uname() . microtime(true));
+        $newKey  = hash('sha256', $dir . php_uname() . microtime(true));
         $content = str_replace('__SALT__', $newKey, $content, $count);
 
         if ($count == 0) {
             $io->write('No Security.salt placeholder to replace.');
+
             return;
         }
 
         $result = file_put_contents($config, $content);
         if ($result) {
             $io->write('Updated Security.salt value in config/app.php');
+
             return;
         }
         $io->write('Unable to update Security.salt value.');

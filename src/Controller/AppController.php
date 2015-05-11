@@ -34,7 +34,7 @@ class AppController extends Controller
         'RequestHandler',
         'Crud.Crud' => [
             'listeners' => ['Crud.Api'],
-            'actions' => [
+            'actions'   => [
                 'Crud.Index',
                 'Crud.Add',
                 'Crud.Edit',

@@ -55,7 +55,8 @@ class PagesController extends AppController
 
         try {
             $this->render(implode('/', $path));
-        } catch (MissingTemplateException $e) {
+        }
+        catch (MissingTemplateException $e) {
             if (Configure::read('debug')) {
                 throw $e;
             }

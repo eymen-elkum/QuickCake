@@ -2,10 +2,11 @@
 use Cake\Core\Configure;
 
 $this->Html->css('BootstrapUI.cover', ['block' => true]);
-$this->prepend('tb_body_attrs', ' class="' . implode(' ', array($this->request->controller, $this->request->action)) . '" ');
+$this->prepend('tb_body_attrs', ' class="' . implode(' ', array($this->request->controller, $this->request->action
+    )) . '" ');
 $this->start('tb_body_start');
 ?>
-<body <?= $this->fetch('tb_body_attrs') ?>>
+    <body <?= $this->fetch('tb_body_attrs') ?>>
     <div class="site-wrapper">
         <div class="site-wrapper-inner">
             <div class="cover-container">
@@ -18,15 +19,15 @@ $this->start('tb_body_start');
                 </div>
 
                 <div class="inner cover">
-<?php
-$this->end();
+                    <?php
+                    $this->end();
 
-$this->start('tb_body_end');
-?>
+                    $this->start('tb_body_end');
+                    ?>
+                </div>
             </div>
         </div>
-    </div>
-</body>
+    </body>
 <?php
 $this->end();
 
