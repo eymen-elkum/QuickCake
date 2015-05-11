@@ -15,6 +15,7 @@
 namespace App\Controller;
 
 use Cake\Controller\Controller;
+use Cake\Event\Event;
 
 /**
  * Application Controller
@@ -26,7 +27,6 @@ use Cake\Controller\Controller;
  */
 class AppController extends Controller
 {
-
     /**
      * Initialization hook method.
      *
@@ -38,5 +38,11 @@ class AppController extends Controller
     {
         parent::initialize();
         $this->loadComponent('Flash');
+        $this->loadComponent('Auth');
     }
+
+    public function beforeRender(Event $event) {
+        $this->set('userData', $this->Auth->user());
+    }
+
 }
