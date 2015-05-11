@@ -41,6 +41,15 @@ use Cake\Routing\Router;
  */
 Router::defaultRouteClass('Route');
 
+
+//This is for the API
+Router::extensions(['json', 'xml']);
+
+Router::connect('/api/:controller', ['_ext' => 'json'], []);
+Router::connect('/rest/:controller', ['_ext' => 'json'], []);
+Router::connect('/:controller-:id', ['action' => 'view'], ['id' => '[0-9]+', 'pass' => ['id']]);
+
+
 Router::scope('/', function ($routes) {
     /**
      * Here, we are connecting '/' (base path) to a controller called 'Pages',

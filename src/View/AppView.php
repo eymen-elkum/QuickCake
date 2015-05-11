@@ -32,13 +32,10 @@ class AppView extends View
      */
     public function initialize()
     {
-        // BootstrapUI Plugin
+        // BootstrapUI Plugin Helpers.
         $this->loadHelper('Html', ['className' => 'BootstrapUI.Html']);
         $this->loadHelper('Form', ['className' => 'BootstrapUI.Form']);
         $this->loadHelper('Flash', ['className' => 'BootstrapUI.Flash']);
         $this->loadHelper('Paginator', ['className' => 'BootstrapUI.Paginator']);
-
-        // Burzum/UserTools Plugin
-        $this->loadHelper('Burzum/UserTools.Auth');
     }
 }

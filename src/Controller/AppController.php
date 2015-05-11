@@ -27,6 +27,23 @@ use Cake\Event\Event;
  */
 class AppController extends Controller
 {
+
+    use \Crud\Controller\ControllerTrait;
+
+    public $components = [
+        'RequestHandler',
+        'Crud.Crud' => [
+            'listeners' => ['Crud.Api'],
+            'actions' => [
+                'Crud.Index',
+                'Crud.Add',
+                'Crud.Edit',
+                'Crud.View',
+                'Crud.Delete'
+            ]
+        ]
+    ];
+
     /**
      * Initialization hook method.
      *
@@ -38,11 +55,6 @@ class AppController extends Controller
     {
         parent::initialize();
         $this->loadComponent('Flash');
-        $this->loadComponent('Auth');
-    }
-
-    public function beforeRender(Event $event) {
-        $this->set('userData', $this->Auth->user());
     }
 
 }

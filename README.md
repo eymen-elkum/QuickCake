@@ -19,5 +19,6 @@ composer create-project --prefer-dist cakephp/app [app_name]
 ```
 
 ## Included plugins
-1. [UserTool](https://github.com/burzum/cakephp-user-tools).
-2. [Bootstrap UI](https://github.com/friendsofcake/bootstrap-ui).
+1. [Bootstrap UI](https://github.com/friendsofcake/bootstrap-ui): Transparently use Twitter Bootstrap 3 with CakePHP 3.
+2. [CRUD](https://github.com/FriendsOfCake/crud): CakePHP Application development on steroids - rapid prototyping / scaffolding & production ready code - JSON APIs and more.
+3. [Proffer](https://github.com/FriendsOfCake/crud): An upload plugin for CakePHP 3.

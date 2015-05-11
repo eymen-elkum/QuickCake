@@ -22,7 +22,6 @@ class UsersTable extends Table
     public function initialize(array $config)
     {
         parent::initialize($config);
-        $this->addBehavior('Burzum/UserTools.User');
 
         $this->table('users');
         $this->displayField('id');

@@ -203,7 +203,8 @@ Type::build('datetime')->useLocaleParser();
 
 
 /*
- * User Config
+ * Custom Config
  * */
 Plugin::load('BootstrapUI');
-Plugin::load('Burzum/UserTools');
+Plugin::load('Crud');
+Plugin::load('Proffer', ['bootstrap' => true]);
