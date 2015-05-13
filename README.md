@@ -12,8 +12,8 @@ Work as a basic CMS can be customized easily.
 3. [Proffer](https://github.com/FriendsOfCake/crud): An upload plugin for CakePHP 3.
 
 ## Tables
-1. Categories Table.
-2. Contents Table.
+1. Categories Table (with image support).
+2. Contents Table (with image support).
 
 ## Installation
 
