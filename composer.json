@@ -1,6 +1,6 @@
 {
-    "name": "cakephp/QuickCake",
-    "description": "CakePHP skeleton app",
+    "name": "ayman/QuickCake",
+    "description": "CakePHP basic cms app",
     "homepage": "http://cakephp.org",
     "type": "project",
     "license": "MIT",
