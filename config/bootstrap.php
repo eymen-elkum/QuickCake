@@ -208,4 +208,5 @@ Type::build('datetime')->useLocaleParser();
 Plugin::load('BootstrapUI');
 Plugin::load('Crud');
 Plugin::load('Proffer', ['bootstrap' => true]);
+Plugin::load('Utils');
 Plugin::load('WebService', ['bootstrap' => true, 'routes' => true]);

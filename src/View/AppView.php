@@ -21,7 +21,7 @@ use Cake\View\View;
 class AppView extends View
 {
 
-    public $layout = 'BootstrapUI.default';
+    public $layout = 'TwitterBootstrap\default';
 
     /**
      * Initialization hook method.

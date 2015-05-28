@@ -12,7 +12,8 @@
         "cakephp/plugin-installer": "*",
         "friendsofcake/bootstrap-ui": "~0.3",
         "friendsofcake/crud": "~4.0",
-        "davidyell/proffer": "dev-master"
+        "davidyell/proffer": "dev-master",
+        "cakemanager/cakephp-utils": "1.0.x-dev"
     },
     "require-dev": {
         "psy/psysh": "@stable",
