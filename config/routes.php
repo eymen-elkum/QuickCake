@@ -48,6 +48,8 @@ Router::connect('/api/:controller', ['_ext' => 'json'], []);
 Router::connect('/rest/:controller', ['_ext' => 'json'], []);
 Router::connect('/:controller-:id', ['action' => 'view'], ['id' => '[0-9]+', 'pass' => ['id']]);
 
+Router::connect('/get_script_version',['controller'=>'categories','action'=> 'getVersion']);
+Router::connect('/proxy',['controller'=>'contents','action'=> 'proxy','_ext' => 'json']);
 
 
 Router::scope('/', function ($routes) {

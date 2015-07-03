@@ -205,8 +205,17 @@ Type::build('datetime')->useLocaleParser();
 /*
  * Custom Config
  * */
+Plugin::load('TinyAuth', ['bootstrap' => true]);
 Plugin::load('BootstrapUI');
 Plugin::load('Crud');
 Plugin::load('Proffer', ['bootstrap' => true]);
-Plugin::load('Utils');
 Plugin::load('WebService', ['bootstrap' => true, 'routes' => true]);
+
+Plugin::load('Icons', ['bootstrap' => false, 'routes' => true]);
+
+/* CakeAdmin */
+Plugin::load('CakeAdmin', ['bootstrap' => true, 'routes' => true]);
+Configure::write('CA.layout.default', 'TwitterBootstrap/default');
+Configure::write('CA.layout.login', 'TwitterBootstrap/default');
+
+Plugin::load('Users', ['bootstrap' => true, 'routes' => true]);

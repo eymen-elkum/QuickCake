@@ -3,7 +3,7 @@ $this->extend('../Layout/TwitterBootstrap/dashboard');
 $this->start('tb_sidebar');
 ?>
 <ul class="nav nav-sidebar">
-    <li><?= $this->Html->link(__('New User'), ['action' => 'add']); ?></li>
+    <li><?= $this->Html->link(__('Yeni User'), ['action' => 'add']); ?></li>
 </ul>
 <?php $this->end(); ?>
 <table class="table table-striped" cellpadding="0" cellspacing="0">
@@ -32,7 +32,8 @@ $this->start('tb_sidebar');
             <td class="actions">
                 <?= $this->Html->link(__('View'), ['action' => 'view', $user->id]) ?>
                 <?= $this->Html->link(__('Edit'), ['action' => 'edit', $user->id]) ?>
-                <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $user->id
+                <?= $this->Form->postLink(__('Delete'), [
+                    'action' => 'delete', $user->id
                 ], ['confirm' => __('Are you sure you want to delete # {0}?', $user->id)]) ?>
             </td>
         </tr>

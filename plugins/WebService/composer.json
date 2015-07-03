@@ -1,0 +1,23 @@
+{
+    "name": "your-name-here/WebService",
+    "description": "WebService plugin for CakePHP",
+    "type": "cakephp-plugin",
+    "require": {
+        "php": ">=5.4.16",
+        "cakephp/cakephp": "~3.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "WebService\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "WebService\\Test\\": "tests",
+            "Cake\\Test\\": "./vendor/cakephp/cakephp/tests"
+        }
+    }
+}

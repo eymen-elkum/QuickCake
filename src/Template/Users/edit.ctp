@@ -10,7 +10,7 @@ $this->start('tb_sidebar');
                 ['confirm' => __('Are you sure you want to delete # {0}?', $user->id)]
             )
             ?></li>
-        <li><?= $this->Html->link(__('List Users'), ['action' => 'index']) ?></li>
+        <li><?= $this->Html->link(__('Users Listesi'), ['action' => 'index']) ?></li>
     </ul>
 <?php $this->end(); ?>
 <?= $this->Form->create($user); ?>

@@ -2,7 +2,8 @@
 use Cake\Core\Configure;
 
 $this->Html->css('BootstrapUI.cover', ['block' => true]);
-$this->prepend('tb_body_attrs', ' class="' . implode(' ', array($this->request->controller, $this->request->action
+$this->prepend('tb_body_attrs', ' class="' . implode(' ', array(
+        $this->request->controller, $this->request->action
     )) . '" ');
 $this->start('tb_body_start');
 ?>

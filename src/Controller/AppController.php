@@ -33,7 +33,7 @@ class AppController extends Controller
     public $components = [
         'RequestHandler',
         'Crud.Crud' => [
-            'listeners' => ['Crud.Api'],
+            'listeners' => ['Crud.Api', 'Crud.ApiPagination'],
             'actions'   => [
                 'Crud.Index',
                 'Crud.Add',
@@ -55,6 +55,27 @@ class AppController extends Controller
     {
         parent::initialize();
         $this->loadComponent('Flash');
+        $this->loadComponent('Users.UserManager');
+        /*$this->loadComponent('Auth', [
+            'authorize' => [
+                'TinyAuth.Tiny' => [
+                    'allowUser' => false,
+                    'authorizeByPrefix' => false,
+                    'prefixes' => [],
+                    'superAdminRole' => null
+                ]
+            ]
+        ]);*/
+
+        //$this->Auth->allow(['index']);
+
+        header('Content-Type: application/json');
+        header('Access-Control-Allow-Origin: *');
+        header('Access-Control-Allow-Headers: Origin, Content-Type, Accept, Authorization');
+        header('Access-Control-Allow-Methods: POST, GET, PUT, DELETE, OPTIONS');
     }
 
+    public function isAuthorized($user){
+        return true;
+    }
 }

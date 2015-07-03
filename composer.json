@@ -13,7 +13,10 @@
         "friendsofcake/bootstrap-ui": "~0.3",
         "friendsofcake/crud": "~4.0",
         "davidyell/proffer": "dev-master",
-        "cakemanager/cakephp-utils": "1.0.x-dev"
+        "phpunit/phpunit": "~4",
+        "dereuromark/cakephp-tinyauth": "dev-master",
+        "cakemanager/cakephp-cakeadmin": "dev-master",
+        "cakemanager/cakephp-users": "dev-master"
     },
     "require-dev": {
         "psy/psysh": "@stable",
@@ -27,14 +30,16 @@
     "autoload": {
         "psr-4": {
             "App\\": "src",
-            "WebService\\": "./plugins/WebService/src"
+            "WebService\\": "./plugins/WebService/src",
+            "Icons\\": "./plugins/Icons/src"
         }
     },
     "autoload-dev": {
         "psr-4": {
             "App\\Test\\": "tests",
             "Cake\\Test\\": "./vendor/cakephp/cakephp/tests",
-            "WebService\\Test\\": "./plugins/WebService/tests"
+            "WebService\\Test\\": "./plugins/WebService/tests",
+            "Icons\\Test\\": "./plugins/Icons/tests"
         }
     },
     "scripts": {
