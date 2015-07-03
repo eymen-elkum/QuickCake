@@ -4,14 +4,23 @@ $this->extend('../Layout/TwitterBootstrap/dashboard');
 $this->start('tb_sidebar');
 ?>
 <ul class="nav nav-sidebar">
-    <li><?= $this->Html->link(__('Yeni Kategori'), ['action' => 'add']); ?></li>
-    <li><?= $this->Html->link(__('Item\'ler Listesi'), ['controller' => 'Contents', 'action' => 'index']); ?></li>
-    <li><?= $this->Html->link(__('Yeni Item'), ['controller' => ' Contents', 'action' => 'add']); ?></li>
+    <li>
+        <?= $this->Html->link(__('<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>Yeni Kategori'), ['action' => 'add'],['escape'=>false]); ?>
+    </li>
+    <li>
+        <?= $this->Html->link(__('Item\'ler Listesi'), ['controller' => 'Contents', 'action' => 'index']); ?>
+    </li>
+    <li>
+        <?= $this->Html->link(__('Yeni Item'), ['controller' => ' Contents', 'action' => 'add']); ?>
+    </li>
 </ul>
 <?php $this->end(); ?>
 <div class="panel panel-default">
     <!-- Default panel contents -->
-    <div class="panel-heading">Kategori'ler</div>
+    <div class="panel-heading">
+        Kategori'ler
+        <span class="pull-right">Showing <?= $this->Paginator->counter() ?></span>
+    </div>
 
     <!-- Table -->
     <table class="table table-striped" cellpadding="0" cellspacing="0">
@@ -54,5 +63,4 @@ $this->start('tb_sidebar');
         <?= $this->Paginator->numbers() ?>
         <?= $this->Paginator->next(__('next') . ' >') ?>
     </ul>
-    <p><?= $this->Paginator->counter() ?></p>
 </div>

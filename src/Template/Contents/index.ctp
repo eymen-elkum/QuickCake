@@ -10,41 +10,44 @@ $this->start('tb_sidebar');
     <li><?= $this->Html->link(__('Yeni Photo'), ['controller' => ' Photos', 'action' => 'add']); ?></li>
 </ul>
 <?php $this->end(); ?>
-<table class="table table-striped" cellpadding="0" cellspacing="0">
-    <thead>
-    <tr>
-        <th><?= $this->Paginator->sort('id'); ?></th>
-        <th><?= $this->Paginator->sort('category_id'); ?></th>
-        <th><?= $this->Paginator->sort('title'); ?></th>
-        <th><?= $this->Paginator->sort('photo'); ?></th>
-        <th class="actions"><?= __('Actions'); ?></th>
-    </tr>
-    </thead>
-    <tbody>
-    <?php foreach ($contents as $content): ?>
+<div class="panel panel-default">
+    <!-- Default panel contents -->
+    <div class="panel-heading">Item'ler Listesi <span class="pull-right">Showing <?= $this->Paginator->counter() ?></span></div>
+    <table class="table table-striped" cellpadding="0" cellspacing="0">
+        <thead>
         <tr>
-            <td><?= $this->Number->format($content->id) ?></td>
-            <td>
-                <?= $content->has('category') ? $this->Html->link($content->category->title, ['controller' => 'Categories', 'action' => 'view', $content->category->id]) : '' ?>
-            </td>
-            <td><?= h($content->title) ?></td>
-            <td><?= $this->Html->image("/files/contents/photo/{$content->photo_dir}/60_{$content->photo}", ['class' => 'img-thumbnail']) ?></td>
-            <td class="actions">
-                <?= $this->Html->link('', ['controller' => 'photos', 'action' => 'index', $content->id], ['title' => __('Geleri'), 'class' => 'btn btn-default glyphicon glyphicon-picture']) ?>
-                <?= $this->Html->link('', ['action' => 'view', $content->id], ['title' => __('View'), 'class' => 'btn btn-default glyphicon glyphicon-eye-open']) ?>
-                <?= $this->Html->link('', ['action' => 'edit', $content->id], ['title' => __('Edit'), 'class' => 'btn btn-default glyphicon glyphicon-pencil']) ?>
-                <?= $this->Form->postLink('', ['action' => 'delete', $content->id], ['confirm' => __('Are you sure you want to delete # {0}?', $content->id), 'title' => __('Delete'), 'class' => 'btn btn-default glyphicon glyphicon-trash']) ?>
-            </td>
+            <th><?= $this->Paginator->sort('id'); ?></th>
+            <th><?= $this->Paginator->sort('category_id'); ?></th>
+            <th><?= $this->Paginator->sort('title'); ?></th>
+            <th><?= $this->Paginator->sort('photo'); ?></th>
+            <th class="actions"><?= __('Actions'); ?></th>
         </tr>
+        </thead>
+        <tbody>
+        <?php foreach ($contents as $content): ?>
+            <tr>
+                <td><?= $this->Number->format($content->id) ?></td>
+                <td>
+                    <?= $content->has('category') ? $this->Html->link($content->category->title, ['controller' => 'Categories', 'action' => 'view', $content->category->id]) : '' ?>
+                </td>
+                <td><?= h($content->title) ?></td>
+                <td><?= $this->Html->image("/files/contents/photo/{$content->photo_dir}/60_{$content->photo}", ['class' => 'img-thumbnail']) ?></td>
+                <td class="actions">
+                    <?= $this->Html->link('', ['controller' => 'photos', 'action' => 'index', $content->id], ['title' => __('Geleri'), 'class' => 'btn btn-default glyphicon glyphicon-picture']) ?>
+                    <?= $this->Html->link('', ['action' => 'view', $content->id], ['title' => __('View'), 'class' => 'btn btn-default glyphicon glyphicon-eye-open']) ?>
+                    <?= $this->Html->link('', ['action' => 'edit', $content->id], ['title' => __('Edit'), 'class' => 'btn btn-default glyphicon glyphicon-pencil']) ?>
+                    <?= $this->Form->postLink('', ['action' => 'delete', $content->id], ['confirm' => __('Are you sure you want to delete # {0}?', $content->id), 'title' => __('Delete'), 'class' => 'btn btn-default glyphicon glyphicon-trash']) ?>
+                </td>
+            </tr>
 
-    <?php endforeach; ?>
-    </tbody>
-</table>
+        <?php endforeach; ?>
+        </tbody>
+    </table>
+</div>
 <div class="paginator text-center">
     <ul class="pagination">
         <?= $this->Paginator->prev('< ' . __('previous')) ?>
         <?= $this->Paginator->numbers() ?>
         <?= $this->Paginator->next(__('next') . ' >') ?>
     </ul>
-    <p><?= $this->Paginator->counter() ?></p>
 </div>

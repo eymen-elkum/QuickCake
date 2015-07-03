@@ -15,3 +15,12 @@ footer {
     bottom: 0;
     left: 10px;
 }
+.navbar.navbar-default.navbar-fixed-top {
+    border-bottom: 4px #e43 solid !important;
+}
+.navbar-nav > li {
+    border-left: 1px solid #ccc;
+}
+.navbar-nav > li:last-child {
+    border-right: 1px solid #CCC;
+}

@@ -17,7 +17,7 @@ $this->start('tb_body_start');
 ?>
     <body <?= $this->fetch('tb_body_attrs') ?>>
     <div class="navbar navbar-default navbar-fixed-top" role="navigation">
-        <div class="container-fluid">
+        <div class="container-fluid" style="padding-left: 0">
             <div class="navbar-header col-sm-3 col-md-2">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
                         data-target=".navbar-collapse">
@@ -32,7 +32,7 @@ $this->start('tb_body_start');
                 <ul class="nav navbar-nav navbar-left">
                     <li><?= $this->Html->link('Categori\'ler', ['controller' => 'categories', 'action' => 'index', 'plugin' => false]); ?></li>
                     <li><?= $this->Html->link('Item\'ler', ['controller' => 'categories', 'action' => 'index', 'plugin' => false]); ?></li>
-                    <li><?php //echo $this->Html->link('Çıkış Yap', ['controller' => 'users', 'action' => 'logout', 'plugin' => 'CakeManager']); ?></li>
+                    <li><?php echo $this->Html->link('Çıkış Yap', ['controller' => 'users', 'action' => 'logout', 'plugin' => 'Users']); ?></li>
                 </ul>
                 <form class="navbar-form navbar-right">
                     <input type="text" class="form-control" placeholder="Search...">
