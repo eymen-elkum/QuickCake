@@ -18,7 +18,7 @@ Work as a basic CMS can be customized easily.
 ## Installation:
 
 1. Download [Composer](http://getcomposer.org/doc/00-intro.md) or update `composer self-update`.
-2. Run `php composer.phar create-project --prefer-dist cakephp/QuickCake [app_name]`.
+2. Run `php composer.phar create-project --prefer-dist ayman/quick_cake [app_name]`.
 
     If Composer is installed globally, run
     ```bash
